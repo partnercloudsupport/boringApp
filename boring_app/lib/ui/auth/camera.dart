@@ -1,11 +1,10 @@
-import 'package:boring_app/stores/auth.store.dart';
-import 'package:boring_app/ui/main/home.dart';
+import 'package:boring_app/stores/stores.manager.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 
-final store = AuthStore();
-
 class CameraScreen extends StatelessWidget {
+  final StoresManager stores = StoresManager();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,11 +14,11 @@ class CameraScreen extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           child: Observer(
-            builder: (_) =>
-                Text(store.authenticated ? 'Signed in' : 'let me in'),
+            builder: (_) => Text(
+                stores.authStore.authenticated ? 'Signed in' : 'let me in'),
           ),
           onPressed: () {
-            store.authenticate();
+            stores.authStore.authenticate();
 //            Navigator.pushNamed(context, '/home');
           },
         ),
@@ -27,8 +26,6 @@ class CameraScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 //********************************
 //Check this https://mobx.pub/getting-started#installing-dependencies
