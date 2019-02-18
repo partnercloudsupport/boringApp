@@ -1,4 +1,5 @@
-import 'package:boring_app/stores/auth.store.dart';
+import 'package:boring_app/stores/auth_store.dart';
+import 'package:boring_app/stores/messages_store.dart';
 
 class StoresManager {
   static final StoresManager _storesManager = new StoresManager._internal();
@@ -9,9 +10,11 @@ class StoresManager {
     return _storesManager;
   }
 
-  AuthStore authStore;
+  AuthStore auth;
+  MessagesStore msg;
 
   void init() {
-    authStore = AuthStore();
+    auth = AuthStore();
+    msg = MessagesStore();
   }
 }

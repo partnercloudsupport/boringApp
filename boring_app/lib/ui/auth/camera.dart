@@ -1,4 +1,4 @@
-import 'package:boring_app/stores/stores.manager.dart';
+import 'package:boring_app/stores/stores_manager.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +15,11 @@ class CameraScreen extends StatelessWidget {
         child: RaisedButton(
           child: Observer(
             builder: (_) => Text(
-                stores.authStore.authenticated ? 'Signed in' : 'let me in'),
+                stores.auth.authenticated ? 'Signed in' : 'let me in'),
           ),
           onPressed: () {
-            stores.authStore.authenticate();
-//            Navigator.pushNamed(context, '/home');
+//            stores.auth.authenticate();
+            Navigator.pushNamed(context, '/messages');
           },
         ),
       ),
