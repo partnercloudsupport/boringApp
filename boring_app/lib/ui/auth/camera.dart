@@ -19,7 +19,7 @@ class CameraScreen extends StatelessWidget {
           ),
           onPressed: () {
 //            stores.auth.authenticate();
-            Navigator.pushNamed(context, '/messages');
+            Navigator.pushNamed(context, '/home');
           },
         ),
       ),

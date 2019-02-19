@@ -11,8 +11,6 @@ void main() {
   StoresManager().msg.addMessage(Message('Praesent a lorem vel nibh ornare bibendum. Nulla quis est massa.'));
   StoresManager().msg.addMessage(Message('Pellentesque condimentum ligula neque, nec accumsan purus aliquet et. Fusce fringilla nunc era.'));
 
-
-
   runApp(MyApp());
 }
 
@@ -28,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => CameraScreen(),
         '/home': (context) => HomeScreen(),
         '/messages': (context) => MessageList(),
+        '/view_message': (context) => MessageList(),
       },
     );
   }

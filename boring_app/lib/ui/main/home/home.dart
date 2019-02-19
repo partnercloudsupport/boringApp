@@ -1,3 +1,5 @@
+import 'package:boring_app/models/message.dart';
+import 'package:boring_app/stores/stores_manager.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,11 +10,23 @@ class HomeScreen extends StatelessWidget {
         title: Text('Home'),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('Back'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Messages'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/messages');
+              },
+            ),
+            RaisedButton(
+              child: Text('Add message'),
+              onPressed: () {
+                StoresManager()
+                    .msg
+                    .addMessage(Message('Hello, this is new one '));
+              },
+            )
+          ],
         ),
       ),
     );
