@@ -21,6 +21,20 @@ mixin _$AuthStore on AuthStoreBase, Store {
     _$authenticatedAtom.reportChanged();
   }
 
+  final _$userAtom = Atom(name: 'AuthStoreBase.user');
+
+  @override
+  User get user {
+    _$userAtom.reportObserved();
+    return super.user;
+  }
+
+  @override
+  set user(User value) {
+    super.user = value;
+    _$userAtom.reportChanged();
+  }
+
   final _$AuthStoreBaseActionController =
       ActionController(name: 'AuthStoreBase');
 
