@@ -47,4 +47,14 @@ mixin _$AuthStore on AuthStoreBase, Store {
       _$AuthStoreBaseActionController.endAction(_$prevDerivation);
     }
   }
+
+  @override
+  void setUser(dynamic user) {
+    final _$prevDerivation = _$AuthStoreBaseActionController.startAction();
+    try {
+      return super.setUser(user);
+    } finally {
+      _$AuthStoreBaseActionController.endAction(_$prevDerivation);
+    }
+  }
 }

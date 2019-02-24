@@ -10,12 +10,15 @@ abstract class AuthStoreBase implements Store {
   bool authenticated = false;
 
   @observable
-  User user = User("Игорь");
-
+  User user = User('Polina');
 
   @action
   void authenticate() {
     this.authenticated = !this.authenticated;
-    this.user = User("Игорь");
+  }
+
+  @action
+  void setUser(user) {
+    this.user = user;
   }
 }
