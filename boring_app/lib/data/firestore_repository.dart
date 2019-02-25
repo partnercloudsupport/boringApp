@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:boring_app/models/user.dart';
 
@@ -9,6 +11,14 @@ final messages = Firestore.instance.collection(message_dir);
 
 class FirestoreRepository {
   Future<String> saveToken(User user, String token) {
+    if(token == null){
+      return users
+          .where('name', isEqualTo: user.name)
+          .getDocuments()
+          .then((snapshot) => snapshot.documents.first)
+          .then((doc)=>doc.documentID);
+    }
+
     return users
         .where('name', isEqualTo: user.name)
         .getDocuments()

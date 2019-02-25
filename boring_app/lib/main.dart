@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
         .getToken()
         .then((token) => FirestoreRepository().saveToken(StoresManager().auth.user, token))
         .then((id) => StoresManager().auth.user.id = id);
+
   }
 
   @override
