@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "796564826094",
+    "firebase_url": "https://app-610a7.firebaseio.com",
+    "project_id": "app-610a7",
+    "storage_bucket": "app-610a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796564826094:android:7268ac7de0ba8479",
+        "android_client_info": {
+          "package_name": "com.akveo.app8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796564826094-p7h6g783ei571ng6j7isfnhm9583gavi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDSMF6IkVMN1k8Yf8Q3wfpuNsVO-TraV0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

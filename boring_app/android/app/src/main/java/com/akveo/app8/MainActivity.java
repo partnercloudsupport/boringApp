@@ -1,4 +1,4 @@
-package com.akveo.boringapp;
+package com.akveo.app8;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
