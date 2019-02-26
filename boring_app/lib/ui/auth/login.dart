@@ -1,3 +1,5 @@
+import 'package:boring_app/ui/common/app_background.dart';
+import 'package:boring_app/ui/common/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -5,17 +7,18 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.deepPurple,
-        body: Column(
+        body: AppBackground(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[text(), form()],
-        ));
+        )));
   }
 
   Widget text() {
     return Padding(
-      padding: EdgeInsets.only(left: 36, right: 36, top: 64),
+      padding: EdgeInsets.only(left: 36, right: 36, top: 40),
       child: RichText(
         text: TextSpan(children: <TextSpan>[
           TextSpan(
@@ -62,7 +65,7 @@ class LoginFormState extends State<LoginForm> {
     return Form(
         key: _loginFormKey,
         child: Padding(
-            padding: EdgeInsets.only(top: 48, bottom: 44),
+            padding: EdgeInsets.only(top: 48, bottom: 32),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -132,14 +135,9 @@ class LoginFormState extends State<LoginForm> {
                                               hintText: 'Пароль')),
                                 )))
                       ]),
-                  ButtonTheme(
-                    minWidth: 279,
-                    height: 56,
-                    buttonColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(28)),
-                    child: RaisedButton(
-                      onPressed: () {
+                  RoundedButton(
+                      title: 'Войти',
+                      onPress: () {
                         final form = _loginFormKey.currentState;
                         if (form.validate()) {
                           form.save();
@@ -148,16 +146,7 @@ class LoginFormState extends State<LoginForm> {
                               SnackBar(content: Text('Hello $_login')));
                           Navigator.of(context).pushNamed('/home');
                         }
-                      },
-                      child: Text(
-                        'Войти'.toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 94, 114, 224)),
-                      ),
-                    ),
-                  )
+                      }),
                 ])));
   }
 }

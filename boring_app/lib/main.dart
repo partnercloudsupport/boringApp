@@ -1,5 +1,6 @@
 import 'package:boring_app/data/firestore_repository.dart';
 import 'package:boring_app/ui/auth/camera.dart';
+import 'package:boring_app/ui/auth/greeting.dart';
 import 'package:boring_app/ui/main/home/home.dart';
 import 'package:boring_app/ui/main/messages/message_list.dart';
 import 'package:boring_app/ui/auth/login.dart';
@@ -54,7 +55,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       initialRoute: '/',
       routes: {
-        '/': (context) => CameraScreen(),
+        '/': (context) => GreetingScreen(),
+        '/camera': (context) => CameraScreen(),
         '/login': (context) => LoginScreen(),
         '/home': (context) => HomeScreen(),
         '/messages': (context) => MessageList(),
