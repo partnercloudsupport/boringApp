@@ -2,6 +2,7 @@ import 'package:boring_app/data/firestore_repository.dart';
 import 'package:boring_app/ui/auth/camera.dart';
 import 'package:boring_app/ui/main/home/home.dart';
 import 'package:boring_app/ui/main/messages/message_list.dart';
+import 'package:boring_app/ui/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:boring_app/stores/stores_manager.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => CameraScreen(),
+        '/login': (context) => LoginScreen(),
         '/home': (context) => HomeScreen(),
         '/messages': (context) => MessageList(),
         '/view_message': (context) => MessageList(),
