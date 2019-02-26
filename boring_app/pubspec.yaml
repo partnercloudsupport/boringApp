@@ -25,6 +25,8 @@ dependencies:
   firebase_messaging:
   firebase_storage:
   cloud_firestore:
+  shared_preferences: ^0.4.3
+  flutter_svg: ^0.10.4
 dev_dependencies:
   flutter_test:
     sdk: flutter

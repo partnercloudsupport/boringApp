@@ -42,10 +42,6 @@ class LoginScreen extends StatelessWidget {
       child: LoginForm(),
     ));
   }
-
-  void submit() {
-    print("SUMBIT");
-  }
 }
 
 class LoginForm extends StatefulWidget {
@@ -141,10 +137,7 @@ class LoginFormState extends State<LoginForm> {
                         final form = _loginFormKey.currentState;
                         if (form.validate()) {
                           form.save();
-
-                          Scaffold.of(context).showSnackBar(
-                              SnackBar(content: Text('Hello $_login')));
-                          Navigator.of(context).pushNamed('/home');
+                          Navigator.of(context).pushNamed('/login_complete');
                         }
                       }),
                 ])));
